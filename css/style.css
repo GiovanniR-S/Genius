@@ -6,14 +6,60 @@
 
 }
 
+@font-face{
+    font-family: "Goldie-Boxing";
+    src: url("../font/Goldie\ Boxing.ttf");
+}
+
+@font-face{
+    font-family: "Lets-Play";
+    src: url("../font/Lets\ Play.ttf");
+}
+
 body{
     margin: 0;
     background-color: rgb(208, 255, 239);
     overflow-x: hidden;
 }
 
+header{
+    background-color: rgb(112, 150, 231);
+    width: 100%;
+    height: 120px;
+    padding-top: 10px;
+    text-align: center;
+    margin: 0;
+}
+
+.logo-Genisis{
+    width: 15%;
+    margin: auto;
+    font-family: "Goldie-Boxing";
+    font-size: 50px;
+    font-style: bold;
+    color: black;
+    padding-top: 3px;
+    cursor: default;
+    background-color: rgb(59, 90, 156);
+    border-radius: 15px;
+}
+
+.play{
+    font-family: "Lets-Play";
+    width: 10%;
+    margin: auto;
+    padding-top: 5px;
+    font-size: 26px;
+    font-style: normal;
+    cursor: pointer;
+}
+
+.play:hover{
+    color: white;
+}
+
 .main-game{
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -28,10 +74,8 @@ body{
     border: 1px solid #ffffff;
     background-color: #ffffff;
     border-radius: 100%;
-    margin-top: 125px;
-    margin-bottom: 25px;
-    width: 700px;
-    height: 700px;
+    width: 500px;
+    height: 500px;
 }
 
 .blue{
