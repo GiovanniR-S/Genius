@@ -40,8 +40,6 @@ header{
     color: black;
     padding-top: 3px;
     cursor: default;
-    background-color: rgb(59, 90, 156);
-    border-radius: 15px;
 }
 
 .play{
@@ -52,6 +50,8 @@ header{
     font-size: 26px;
     font-style: normal;
     cursor: pointer;
+    background-color: rgb(59, 90, 156);
+    border-radius: 15px;
 }
 
 .play:hover{
@@ -71,8 +71,8 @@ header{
     grid-template-areas: 'verde vermelho'
     'amarelo azul';
     grid-gap: 10px;
-    border: 1px solid #ffffff;
-    background-color: #ffffff;
+    border: 3px solid #d6d3d3;
+    background-color: #d6d3d3;
     border-radius: 100%;
     width: 500px;
     height: 500px;
@@ -82,24 +82,28 @@ header{
     grid-area: azul;
     background-color: blue;
     border-bottom-right-radius: 100%;
+    border: 2px solid black;
 }
 
 .red{
     grid-area: vermelho;
     background-color: red;
     border-top-right-radius: 100%;
+    border: 2px solid black;
 }
 
 .yellow{
     grid-area: amarelo;
     background-color: yellow;
     border-bottom-left-radius: 100%;
+    border: 2px solid black;
 }
 
 .green{
     grid-area: verde;
     background-color: green;
     border-top-left-radius: 100%;
+    border: 2px solid black;
 }
 
 .selected{
