@@ -2,6 +2,8 @@ let order = [];
 let clickedOrder = [];
 let score = 0;
 
+let perdeuJogo = false;
+
 //0 - verde, 1 - vermelho, 2 - amarelo, 3 - azul
 
 const blue = document.querySelector('.blue');
@@ -42,20 +44,24 @@ let checkOrder = () => {
     }
 
     if(clickedOrder.length == order.length){
-        alert(`Pontuação: ${score}\nVocê acertou! Iniciando próximo nível!`);
-        nextLevel();
-    } 
+        if(perdeuJogo == false){
+            alert(`Pontuação: ${score}\nVocê acertou! Iniciando próximo nível!`);
+            nextLevel();
+        }
+    }
 }
 
 //Função para o clique do usuario
 let click = (color) => {
-    clickedOrder[clickedOrder.length] = color;
-    createColorElement(color).classList.add('selected');
+    if(perdeuJogo == false){
+        clickedOrder[clickedOrder.length] = color;
+        createColorElement(color).classList.add('selected');
 
-    setTimeout(() => {
-        createColorElement(color).classList.remove('selected');
-        checkOrder();
-    }, 150);
+        setTimeout(() => {
+            createColorElement(color).classList.remove('selected');
+            checkOrder();
+        }, 150);
+    }
 
 }
 
@@ -74,25 +80,32 @@ let createColorElement = (color) => {
 
 //função para proximo level
 let nextLevel = () => {
-    score++;
-    shuffleOrder();
+    if(perdeuJogo == false){
+        score++;
+        shuffleOrder();
+    }
 }
 
 //função para game over
 let gameOver = () => {
-    alert(`Pontuação: ${score}!\nVocê Perdeu o jogo\nClique em Ok para iniciar um novo jogo`);
+    alert(`Pontuação: ${score}!\nVocê Perdeu o jogo\nClique em PLAY! para iniciar um novo jogo`);
     order = [];
     clickedOrder = [];
 
-    playGame();
+    perdeuJogo = true;
+
 }
 
 //Função de inicio do jogo
 let playGame = () => {
+    perdeuJogo = false;
+
     alert('Bem vindo ao Genesis! Iniciando novo jogo!');
     score = 0;
 
-    nextLevel();
+    if(perdeuJogo == false){
+        nextLevel();
+    }
 }
 
 //Evento de clique para as cores
